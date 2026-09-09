@@ -81,3 +81,7 @@ export const jobStages = [
 ]
   .map((s) => ({ ...s, photo: bySlug(s.slug) }))
   .filter((s): s is typeof s & { photo: Proof } => Boolean(s.photo));
+
+/** Photo counts per service area, used by the service-area section so the
+ *  numbers shown are real rather than decorative. */
+export const proofByArea = (area: string) => proof.filter((p) => p.area === area);

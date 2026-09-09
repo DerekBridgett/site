@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import ProofGallery from "@/components/ProofGallery";
 import JobProgression from "@/components/JobProgression";
+import ServiceArea from "@/components/ServiceArea";
 import QuoteForm from "@/components/QuoteForm";
 import Stars from "@/components/Stars";
 import { featured, proofFor } from "@/data/proof";
@@ -99,6 +100,8 @@ export default function Home() {
           ))}
         </ol>
       </section>
+
+      <ServiceArea />
 
       <section className="mx-auto max-w-6xl px-4 py-6">
         <div className="flex flex-wrap items-end justify-between gap-4">
