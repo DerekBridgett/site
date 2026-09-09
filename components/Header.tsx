@@ -2,12 +2,8 @@
 import Link from "next/link";
 import { useState } from "react";
 import ThemeToggle from "./ThemeToggle";
-
-const nav = [
-  { href: "/services", label: "Services" },
-  { href: "/work", label: "Our work" },
-  { href: "/reviews", label: "Reviews" },
-];
+import { nav } from "@/data/nav";
+import { site } from "@/data/site";
 
 export default function Header() {
   const [open, setOpen] = useState(false);
@@ -23,7 +19,7 @@ export default function Header() {
         <nav className="ml-auto hidden items-center gap-6 text-sm font-semibold md:flex">
           {nav.map((n) => <Link key={n.href} href={n.href} className="hover:text-green">{n.label}</Link>)}
         </nav>
-        <a href="tel:5615550142" className="hidden text-sm font-bold text-blue lg:block">(561) 555-0142</a>
+        <a href={site.phoneHref} className="hidden text-sm font-bold text-blue lg:block">{site.phone}</a>
         <a href="/#quote" className="hidden rounded-full bg-green px-4 py-2 text-sm font-bold text-green-ink md:block">Get a free quote</a>
         <ThemeToggle />
         <button className="md:hidden h-9 w-9 grid place-items-center" aria-label="Menu" aria-expanded={open} onClick={() => setOpen(!open)}>

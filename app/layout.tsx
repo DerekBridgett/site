@@ -3,10 +3,12 @@ import { ThemeProvider } from "next-themes";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { site, siteUrl, areaList } from "@/data/site";
 
 export const metadata: Metadata = {
-  title: "Irrigation Systems & Landscape Lighting — South Florida",
-  description: "Irrigation install and repair, pump systems, and low-voltage landscape lighting for Boca Raton, Delray Beach, Boynton Beach, and Wellington.",
+  metadataBase: new URL(siteUrl),
+  title: `${site.name} — South Florida`,
+  description: `Irrigation install and repair, pump systems, and low-voltage landscape lighting for ${areaList}.`,
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

@@ -6,6 +6,7 @@ import Stars from "@/components/Stars";
 import { featured, proofFor } from "@/data/proof";
 import { services } from "@/data/services";
 import { reviews } from "@/data/reviews";
+import { site, areaList } from "@/data/site";
 
 const steps = [
   ["Tell us what's wrong", "Call or send the form. Dry patch, low pressure, a pump that won't prime — a sentence is enough."],
@@ -26,11 +27,11 @@ export default function Home() {
             Irrigation that reaches every corner, and lights that show it off.
           </h1>
           <p className="mt-5 max-w-prose text-lg text-ink-2">
-            Sprinkler install and repair, well and lake pump systems, and low-voltage landscape lighting for Boca Raton, Delray Beach, Boynton Beach, and Wellington. Every job photographed, so you see exactly what was done.
+            Sprinkler install and repair, well and lake pump systems, and low-voltage landscape lighting for {areaList}. Every job photographed, so you see exactly what was done.
           </p>
           <div className="mt-7 flex flex-wrap gap-3">
             <a href="#quote" className="rounded-full bg-green px-5 py-3 font-bold text-green-ink">Get a free quote</a>
-            <a href="tel:5615550142" className="rounded-full border border-line bg-surface px-5 py-3 font-bold">Call (561) 555-0142</a>
+            <a href={site.phoneHref} className="rounded-full border border-line bg-surface px-5 py-3 font-bold">Call {site.phone}</a>
           </div>
           <ul className="mt-8 grid gap-2 text-sm text-ink-2 sm:grid-cols-2">
             {["Free on-site evaluation", "Written price before work starts", "Photos of every job", "Licensed and insured"].map((t) => (
@@ -47,7 +48,7 @@ export default function Home() {
             <h2 className="text-3xl">Proof of service</h2>
             <p className="mt-2 max-w-prose text-ink-2">Real jobs, photographed by the crew that did them. Tap any photo to see the full shot.</p>
           </div>
-          <Link href="/work" className="font-semibold text-blue">See all {featured.length ? "our work" : ""}</Link>
+          <Link href="/work" className="font-semibold text-blue">See all our work</Link>
         </div>
         <div className="mt-6">
           <ProofGallery items={featured} columns={3} />
@@ -115,10 +116,10 @@ export default function Home() {
       <section className="mx-auto max-w-6xl px-4 py-14">
         <div className="rounded-3xl bg-green px-6 py-10 text-green-ink sm:px-10 sm:py-14">
           <h2 className="text-3xl">Dry spots? Pump won't prime? We'll come take a look.</h2>
-          <p className="mt-3 max-w-prose opacity-90">Free evaluation anywhere in southern Palm Beach County. Most repairs done the same visit.</p>
+          <p className="mt-3 max-w-prose opacity-90">Free evaluation anywhere in {site.region}. Most repairs done the same visit.</p>
           <div className="mt-6 flex flex-wrap gap-3">
             <a href="#quote" className="rounded-full bg-bg px-5 py-3 font-bold text-ink">Get a free quote</a>
-            <a href="tel:5615550142" className="rounded-full border border-current px-5 py-3 font-bold">Call (561) 555-0142</a>
+            <a href={site.phoneHref} className="rounded-full border border-current px-5 py-3 font-bold">Call {site.phone}</a>
           </div>
         </div>
       </section>
