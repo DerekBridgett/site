@@ -4,6 +4,7 @@ export type NavItem = { href: string; label: string };
  *  lists can't drift apart. */
 export const nav: NavItem[] = [
   { href: "/services", label: "Services" },
+  { href: "/lighting", label: "Lighting" },
   { href: "/work", label: "Our work" },
   { href: "/reviews", label: "Reviews" },
 ];

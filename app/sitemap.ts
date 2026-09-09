@@ -5,6 +5,7 @@ import { siteUrl } from "@/data/site";
 const routes = [
   { path: "", priority: 1.0 },
   { path: "/services", priority: 0.9 },
+  { path: "/lighting", priority: 0.9 },
   { path: "/work", priority: 0.8 },
   { path: "/reviews", priority: 0.7 },
 ];

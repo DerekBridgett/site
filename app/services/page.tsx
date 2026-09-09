@@ -1,3 +1,4 @@
+import Link from "next/link";
 import ProofGallery from "@/components/ProofGallery";
 import { proofFor } from "@/data/proof";
 import { services } from "@/data/services";
@@ -36,7 +37,12 @@ export default function ServicesPage() {
                   <ProofGallery items={pics} columns={2} />
                 ) : (
                   <div className="rounded-2xl border border-dashed border-line bg-surface p-8 text-center text-sm text-ink-2">
-                    Photos from our first lighting installs are on the way. Ask us to send examples when you request a quote.
+                    <p>Photos from our first lighting installs are on the way. Ask us to send examples when you request a quote.</p>
+                    {s.id === "lighting" && (
+                      <Link href="/lighting" className="mt-3 inline-block font-semibold text-blue">
+                        See what we install &rarr;
+                      </Link>
+                    )}
                   </div>
                 )}
               </div>
