@@ -9,7 +9,7 @@
     "photos": "python3 scripts/prep-photos.py"
   },
   "dependencies": {
-    "next": "15.5.2",
+    "next": "15.5.25",
     "next-themes": "^0.4.6",
     "react": "19.1.1",
     "react-dom": "19.1.1"
