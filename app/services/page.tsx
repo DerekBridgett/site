@@ -1,9 +1,14 @@
-import type { Metadata } from "next";
 import ProofGallery from "@/components/ProofGallery";
 import { proofFor } from "@/data/proof";
 import { services } from "@/data/services";
+import { pageMeta } from "@/lib/seo";
+import { areaList } from "@/data/site";
 
-export const metadata: Metadata = { title: "Services — irrigation, pumps, beds, and lighting" };
+export const metadata = pageMeta({
+  title: "Services",
+  description: `Sprinkler install and repair, well and lake pump replacement, mulch and gravel beds, and low-voltage landscape lighting in ${areaList}. Photos from real jobs under every service.`,
+  path: "/services",
+});
 
 export default function ServicesPage() {
   return (

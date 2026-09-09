@@ -1,8 +1,13 @@
-import type { Metadata } from "next";
 import ProofGallery from "@/components/ProofGallery";
 import { proof } from "@/data/proof";
+import { pageMeta } from "@/lib/seo";
+import { areaList } from "@/data/site";
 
-export const metadata: Metadata = { title: "Our work — proof of service photos" };
+export const metadata = pageMeta({
+  title: "Our work",
+  description: `${proof.length} photos from real irrigation, pump, and landscape jobs in ${areaList} — taken on site by the crew that did the work.`,
+  path: "/work",
+});
 
 export default function WorkPage() {
   return (

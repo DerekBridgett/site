@@ -5,7 +5,7 @@ import QuoteForm from "@/components/QuoteForm";
 import Stars from "@/components/Stars";
 import { featured, proofFor } from "@/data/proof";
 import { services } from "@/data/services";
-import { reviews } from "@/data/reviews";
+import { reviews, ratingAvg, reviewCount } from "@/data/reviews";
 import { site, areaList } from "@/data/site";
 
 const steps = [
@@ -21,7 +21,7 @@ export default function Home() {
       <section className="mx-auto grid max-w-6xl gap-10 px-4 pt-12 pb-16 lg:grid-cols-[1.1fr_1fr] lg:items-start">
         <div>
           <p className="inline-flex items-center gap-2 rounded-full bg-blue-soft px-3 py-1 text-sm font-semibold text-blue">
-            <Stars n={5} /> 4.9 from 180+ local reviews
+            <Stars n={5} /> {ratingAvg} average from {reviewCount} local reviews
           </p>
           <h1 className="mt-5 text-4xl leading-[1.05] sm:text-5xl">
             Irrigation that reaches every corner, and lights that show it off.

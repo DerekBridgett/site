@@ -1,13 +1,18 @@
-import type { Metadata } from "next";
 import Image from "next/image";
 import Stars from "@/components/Stars";
-import { reviews } from "@/data/reviews";
+import { reviews, ratingAvg, reviewCount } from "@/data/reviews";
 import { serviceById } from "@/data/services";
+import { pageMeta } from "@/lib/seo";
+import { areaList } from "@/data/site";
 
-export const metadata: Metadata = { title: "Customer reviews" };
+export const metadata = pageMeta({
+  title: "Customer reviews",
+  description: `${ratingAvg} out of 5 across ${reviewCount} recent reviews from customers in ${areaList}. Each review is paired with a photo from that job.`,
+  path: "/reviews",
+});
 
 export default function ReviewsPage() {
-  const avg = (reviews.reduce((a, r) => a + r.stars, 0) / reviews.length).toFixed(1);
+  const avg = ratingAvg.toFixed(1);
   return (
     <div className="mx-auto max-w-6xl px-4 py-12">
       <h1 className="text-4xl">Reviews</h1>

@@ -21,3 +21,10 @@ export const reviews: Review[] = [
   { name: "Priya S.", area: "Delray Beach", stars: 4, service: "irrigation", photo: "/proof/trench-mainline-05.webp",
     text: "Scheduling took a few days but the install itself was clean and they put the sod back neatly." },
 ];
+
+/** Derived from the array above so on-page copy, the reviews page, and the
+ *  LocalBusiness structured data can never disagree with each other.
+ *  Google treats a mismatch between visible ratings and aggregateRating
+ *  markup as a structured-data violation, so nothing should hardcode these. */
+export const reviewCount = reviews.length;
+export const ratingAvg = Number((reviews.reduce((a, r) => a + r.stars, 0) / reviews.length).toFixed(1));
