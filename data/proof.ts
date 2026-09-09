@@ -46,3 +46,38 @@ export const proof: Proof[] = [
 
 export const featured = proof.filter((p) => p.featured);
 export const proofFor = (id: ServiceId) => proof.filter((p) => p.service === id);
+
+/** Look up a photo by its slug (the filename without /proof/ or .webp). */
+export const bySlug = (slug: string) => proof.find((p) => p.src === `/proof/${slug}.webp`);
+
+/**
+ * Confirmed same-job before/after pairs.
+ *
+ * EMPTY BY DESIGN. Nothing in the photo set records which trench photo and
+ * which finished photo came from the same property — trenches are tagged
+ * `irrigation`, finished yards `landscape`, and `area` is only a city, not an
+ * address. Pairing on city alone would put a Boca Raton trench beside an
+ * unrelated Boca Raton flowerbed and present them as one job.
+ *
+ * To turn on real before/afters: add entries here using photo slugs. The
+ * homepage section switches from the process sequence to a draggable
+ * before/after slider automatically as soon as this array is non-empty.
+ */
+export const beforeAfterPairs: { before: string; after: string; caption: string }[] = [];
+
+export const resolvedPairs = beforeAfterPairs
+  .map((p) => ({ before: bySlug(p.before), after: bySlug(p.after), caption: p.caption }))
+  .filter((p): p is { before: Proof; after: Proof; caption: string } => Boolean(p.before && p.after));
+
+/**
+ * Representative stages of a typical job, shown when no confirmed pairs exist.
+ * These are three photos of the same KIND of work from different properties,
+ * and the captions say so — they never claim to be one yard over time.
+ */
+export const jobStages = [
+  { slug: "trench-mainline-01", stage: "Trenching", note: "Mainline goes in along the bed line. Sod is cut and set aside so it can go back down." },
+  { slug: "fence-line-zone-test-01", stage: "Zone testing", note: "Every zone runs before backfill, so coverage gets tuned while the line is still reachable." },
+  { slug: "paver-border-annuals-01", stage: "Put back better", note: "Trenches closed, beds re-edged, fresh mulch and color where the digging was." },
+]
+  .map((s) => ({ ...s, photo: bySlug(s.slug) }))
+  .filter((s): s is typeof s & { photo: Proof } => Boolean(s.photo));

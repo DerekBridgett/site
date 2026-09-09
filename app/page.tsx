@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import ProofGallery from "@/components/ProofGallery";
+import JobProgression from "@/components/JobProgression";
 import QuoteForm from "@/components/QuoteForm";
 import Stars from "@/components/Stars";
 import { featured, proofFor } from "@/data/proof";
@@ -54,6 +55,8 @@ export default function Home() {
           <ProofGallery items={featured} columns={3} />
         </div>
       </section>
+
+      <JobProgression />
 
       <section className="border-y border-line bg-surface py-14">
         <div className="mx-auto max-w-6xl px-4">
