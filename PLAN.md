@@ -1,7 +1,23 @@
 # Improvement plan
 
-Status: **awaiting approval — no site code changed yet.**
-Branch: `site-improvements` (off `main`). Nothing pushed.
+Status: **approved and implemented.** All seven phases landed on
+`site-improvements`, one commit each, `npm run build` green at every step.
+Not pushed.
+
+Decisions taken (all four defaults from the open questions below):
+1. Before/after — Option B, the process walkthrough. `beforeAfterPairs` is wired
+   and empty; filling it flips the section to real sliders with no code change.
+2. `aggregateRating` — computed from the 5 real reviews (4.8). The homepage badge
+   was changed to match, since visible copy and markup disagreeing is itself a
+   structured-data violation.
+3. Contact form — Formspree behind `NEXT_PUBLIC_FORMSPREE_ID`, demo behaviour
+   until it is set.
+4. Existing CTAs still point at the homepage `/#quote` anchor.
+
+Phase 7 was run as a real browser audit rather than a code read: headless Edge at
+320/375/414/768/1024/1280 measuring overflow, tap targets, and input font sizes.
+It found no horizontal overflow anywhere, and a set of undersized tap targets and
+a 768px nav break that are now fixed and re-verified.
 
 Baseline verified before writing this: `npm install` clean, `npm run build` passes,
 7 static routes, no type errors.
