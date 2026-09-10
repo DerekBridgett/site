@@ -11,10 +11,13 @@ const fromEnv =
 export const siteUrl = fromEnv ?? "http://localhost:3000";
 
 export const site = {
-  name: "Irrigation Systems & Landscape Lighting",
+  name: "Bridgett's Basement Services INC",
+  // The header styles the two halves of the name differently.
+  nameLead: "Bridgett's Basement",
+  nameTail: "Services INC",
   tagline: "Irrigation that reaches every corner, and lights that show it off.",
-  phone: "(561) 555-0142",
-  phoneHref: "tel:5615550142",
+  phone: "(850) 557-1583",
+  phoneHref: "tel:8505571583",
   hours: "Mon–Sat, 7am–6pm",
   region: "southern Palm Beach County",
 } as const;

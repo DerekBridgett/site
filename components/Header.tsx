@@ -14,7 +14,7 @@ export default function Header() {
           <span className="grid h-9 w-9 place-items-center rounded-lg bg-green text-green-ink">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><path d="M12 3c-3 4-6 7-6 11a6 6 0 0 0 12 0c0-4-3-7-6-11z"/></svg>
           </span>
-          <span className="text-sm sm:text-base lg:whitespace-nowrap">Irrigation Systems<br className="sm:hidden" /> <span className="text-ink-2 font-semibold">&amp; Landscape Lighting</span></span>
+          <span className="text-sm sm:text-base lg:whitespace-nowrap">{site.nameLead}<br className="sm:hidden" /> <span className="text-ink-2 font-semibold">{site.nameTail}</span></span>
         </Link>
         <nav className="hidden items-center gap-6 text-sm font-semibold lg:flex">
           {nav.map((n) => <Link key={n.href} href={n.href} className="whitespace-nowrap py-2 hover:text-green">{n.label}</Link>)}

@@ -1,4 +1,4 @@
-# Irrigation Systems & Landscape Lighting — demo site
+# Bridgett's Basement Services INC — demo site
 
 Next.js 15 + Tailwind 4, dark mode via `next-themes`. Proof-of-service photos live in `public/proof/` and are tagged by service in `data/proof.ts`.
 

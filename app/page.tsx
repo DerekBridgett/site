@@ -44,16 +44,21 @@ export default function Home() {
         <QuoteForm />
       </section>
 
-      <section className="mx-auto max-w-6xl px-4 py-12">
-        <div className="flex flex-wrap items-end justify-between gap-4">
-          <div>
-            <h2 className="text-3xl">Proof of service</h2>
-            <p className="mt-2 max-w-prose text-ink-2">Real jobs, photographed by the crew that did them. Tap any photo to see the full shot.</p>
+      {/* Solid blue band directly under the hero. Text colour is set per
+          element rather than on the section, so it can't inherit into the
+          gallery tiles, which are light cards with their own dark captions. */}
+      <section className="bg-blue-band py-14">
+        <div className="mx-auto max-w-6xl px-4">
+          <div className="flex flex-wrap items-end justify-between gap-4">
+            <div>
+              <h2 className="text-3xl text-blue-band-ink">Proof of service</h2>
+              <p className="mt-2 max-w-prose text-blue-band-ink/90">Real jobs, photographed by the crew that did them. Tap any photo to see the full shot.</p>
+            </div>
+            <Link href="/work" className="font-semibold text-blue-band-ink underline underline-offset-4 hover:opacity-80">See all our work</Link>
           </div>
-          <Link href="/work" className="font-semibold text-blue">See all our work</Link>
-        </div>
-        <div className="mt-6">
-          <ProofGallery items={featured} columns={3} />
+          <div className="mt-6">
+            <ProofGallery items={featured} columns={3} />
+          </div>
         </div>
       </section>
 

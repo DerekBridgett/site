@@ -14,6 +14,8 @@
   --green-soft: #dff0e4;
   --blue: #1f6fb2;
   --blue-soft: #ddebf8;
+  --blue-band: #1f6fb2;
+  --blue-band-ink: #ffffff;
 }
 .dark {
   --bg: #0f1512;
@@ -27,6 +29,8 @@
   --green-soft: #1b3325;
   --blue: #5aa5e6;
   --blue-soft: #16304a;
+  --blue-band: #17405f;
+  --blue-band-ink: #eaf2fb;
 }
 
 @theme inline {
@@ -41,6 +45,8 @@
   --color-green-soft: var(--green-soft);
   --color-blue: var(--blue);
   --color-blue-soft: var(--blue-soft);
+  --color-blue-band: var(--blue-band);
+  --color-blue-band-ink: var(--blue-band-ink);
   --font-sans: "Manrope", ui-sans-serif, system-ui, sans-serif;
 }
 
