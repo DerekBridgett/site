@@ -17,7 +17,7 @@ export default function ServicesPage() {
       <h1 className="text-4xl">Services</h1>
       <p className="mt-3 max-w-prose text-ink-2">Each service below shows photos from jobs of that type, so you can see what to expect.</p>
       <nav className="mt-6 flex flex-wrap gap-2 text-sm font-semibold">
-        {services.map((s) => <a key={s.id} href={`#${s.id}`} className="rounded-full border border-line bg-surface px-3 py-1.5 hover:text-green">{s.name}</a>)}
+        {services.map((s) => <a key={s.id} href={`#${s.id}`} className="rounded-full border border-line bg-surface px-3.5 py-2.5 hover:text-green">{s.name}</a>)}
       </nav>
       {services.map((s) => {
         const pics = proofFor(s.id);
@@ -39,7 +39,7 @@ export default function ServicesPage() {
                   <div className="rounded-2xl border border-dashed border-line bg-surface p-8 text-center text-sm text-ink-2">
                     <p>Photos from our first lighting installs are on the way. Ask us to send examples when you request a quote.</p>
                     {s.id === "lighting" && (
-                      <Link href="/lighting" className="mt-3 inline-block font-semibold text-blue">
+                      <Link href="/lighting" className="mt-2 inline-block py-1.5 font-semibold text-blue">
                         See what we install &rarr;
                       </Link>
                     )}

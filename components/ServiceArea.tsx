@@ -26,7 +26,7 @@ export default function ServiceArea({ heading = "Where we work" }: { heading?: s
           </p>
         </div>
         <p className="text-sm text-ink-2">
-          Outside these? <a href={site.phoneHref} className="font-semibold text-blue">Call {site.phone}</a> — we travel for larger jobs.
+          Outside these? <a href={site.phoneHref} className="py-1.5 font-semibold text-blue">Call {site.phone}</a> — we travel for larger jobs.
         </p>
       </div>
 

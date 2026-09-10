@@ -12,15 +12,15 @@ export default function Footer() {
         </div>
         <div className="text-sm">
           <p className="font-semibold">Pages</p>
-          <ul className="mt-2 space-y-1 text-ink-2">
+          <ul className="mt-2 text-ink-2">
             {nav.map((n) => (
-              <li key={n.href}><Link href={n.href} className="hover:text-ink">{n.label}</Link></li>
+              <li key={n.href}><Link href={n.href} className="block py-1.5 hover:text-ink">{n.label}</Link></li>
             ))}
           </ul>
         </div>
         <div className="text-sm">
           <p className="font-semibold">Contact</p>
-          <p className="mt-2 text-ink-2"><a href={site.phoneHref} className="text-blue font-semibold">{site.phone}</a><br />{site.hours}</p>
+          <p className="mt-2 text-ink-2"><a href={site.phoneHref} className="inline-block py-1.5 text-blue font-semibold">{site.phone}</a><br />{site.hours}</p>
         </div>
       </div>
       <p className="border-t border-line px-4 py-4 text-center text-xs text-ink-2">© {new Date().getFullYear()} {site.name}. Demo site.</p>

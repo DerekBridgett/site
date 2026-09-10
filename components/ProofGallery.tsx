@@ -20,7 +20,7 @@ export default function ProofGallery({ items, filters = false, columns = 3 }: { 
             .filter((f) => f.n > 0)
             .map((f) => (
               <button key={f.id} onClick={() => setFilter(f.id)} aria-pressed={filter === f.id}
-                className={`rounded-full border px-3 py-1.5 text-sm font-semibold ${filter === f.id ? "border-green bg-green text-green-ink" : "border-line bg-surface text-ink-2 hover:text-ink"}`}>
+                className={`rounded-full border px-3.5 py-2.5 text-sm font-semibold ${filter === f.id ? "border-green bg-green text-green-ink" : "border-line bg-surface text-ink-2 hover:text-ink"}`}>
                 {f.name} <span className="opacity-60">{f.n}</span>
               </button>
             ))}
